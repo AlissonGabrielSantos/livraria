@@ -1,7 +1,4 @@
-from tabnanny import verbose
 from django.db import models
-from django.forms import URLField
-
 
 class Autor(models.Model):
     nome = models.CharField(max_length=100)
