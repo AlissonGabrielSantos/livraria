@@ -17,14 +17,13 @@ class EditoraSerializer(ModelSerializer):
         model = Editora
         fields = "__all__"
 
-class LivroGetSerializer(ModelSerializer):
+class LivroSerializer(ModelSerializer):
+    class Meta:
+        model = Livro
+        fields = "__all__"
+
+class LivroDetailSerializer(ModelSerializer):
     class Meta:
         model = Livro
         fields = "__all__"
         depth = 1
-
-class LivroPutSerializer(ModelSerializer):
-    class Meta:
-        model = Livro
-        fields = "__all__"
-        #depth = 1

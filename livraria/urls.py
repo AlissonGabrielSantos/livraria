@@ -8,8 +8,7 @@ router = DefaultRouter()
 router.register(r'autores', views.AutorViewSet)
 router.register(r'categorias', views.CategoriaViewSet)
 router.register(r'editoras', views.EditoraViewSet)
-router.register(r'livroget', views.LivroGetViewSet)
-router.register(r'livroput', views.LivroPutViewSet)
+router.register(r'livros', views.LivroViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
