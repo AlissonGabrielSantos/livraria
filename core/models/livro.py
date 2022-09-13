@@ -1,30 +1,10 @@
 from django.db import models
 
-class Autor(models.Model):
-    nome = models.CharField(max_length=100)
-    email = models.EmailField(max_length=50)
 
-    def __str__(self):
-        return self.nome
+from .autor import Autor
+from .categoria import Categoria
+from .editora import Editora
 
-    class Meta:
-        verbose_name_plural = "autores"
-
-class Categoria(models.Model):
-    descricao = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.descricao
-
-
-class Editora(models.Model):
-    nome = models.CharField(max_length=100)
-    site = models.URLField()
-
-    def __str__(self):
-        return self.nome
-
-    
 class Livro(models.Model):
     titulo = models.CharField(max_length=255)
     ISBN = models.CharField(max_length=32, null=True, blank=True)
@@ -39,4 +19,4 @@ class Livro(models.Model):
     autores = models.ManyToManyField(Autor, related_name="livros")
 
     def __str__(self):
-        return f"{self.titulo} ({self.quantidade})" 
+        return f"{self.titulo} ({self.quantidade})"
