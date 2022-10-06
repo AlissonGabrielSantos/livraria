@@ -1,5 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
-
+from rest_framework.permissions import IsAuthenticated
 from core.models import Livro
 from core import serializers
 
@@ -10,3 +10,4 @@ class LivroViewSet(ModelViewSet):
         if self.action in ['list', 'retrieve']:
             return serializers.LivroDetailSerializer
         return serializers.LivroSerializer
+    permission_classes = [IsAuthenticated]
