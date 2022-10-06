@@ -1,7 +1,9 @@
-from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
-from core.models import Editora
+from rest_framework.viewsets import ModelViewSet
+
 from core import serializers
+from core.models import Editora
+
 
 class EditoraViewSet(ModelViewSet):
     queryset = Editora.objects.all()
